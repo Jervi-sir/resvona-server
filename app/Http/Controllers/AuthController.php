@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function login(Request $request) {
         $fields = $request->validate([
-            'email' => 'required|string',
+            'name' => 'required|string',
             'password' => 'required|string'
         ]);
         // Check name
@@ -49,6 +49,7 @@ class AuthController extends Controller
 
         $user = User::create([
             'name' => $fields['name'],
+            'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
 
