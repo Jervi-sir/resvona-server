@@ -43,10 +43,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tokens()
-    {
-        return $this->hasMany(PersonalAccessToken::class, 'tokenable_id');
-    }
-
 
 }
