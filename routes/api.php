@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('products', ProductController::class);
 
 // Public routes
+Route::get('/awake', [ServerController::class, 'awake']);
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/products', [ProductController::class, 'index']);
